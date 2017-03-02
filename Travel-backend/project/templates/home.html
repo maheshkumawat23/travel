@@ -4,12 +4,12 @@
 		<div class="row center-align">
 		<div class="input-field col l6 m6 s6">
 						
-						 <select ng-model="live.location" ng-options="x for x in locationNames" required>
+						 <select ng-model="live.location" ng-options="x for x in locationNames" ng-change="changeData()" required>
 						 <option value=''>- Choose Location -</option>
 						</select>
 					</div>
 		<div class="input-field col l6 m6 s6">
-						<select ng-model="live.vendorName" ng-options="y for y in vehicleTypes" required>
+						<select ng-model="live.vendorName" ng-options="y for y in vendorNames" required>
 						<option value=''>- Choose VehicleType -</option>
 </select>
 					</div>

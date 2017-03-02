@@ -13,8 +13,8 @@
         vm.changeData = changeData;
         vm.adminLogin = adminLogin;
         vm.checked = true;
-        vm.locationNames = ["Abhilash", "Dhara", "Global Axis","ITPL", 
-        "Jal", "L Center", "Manyata","Pioneer","PSN","SJM Towers","Think campus","Vydehi"];
+        vm.locationNames = ["Abhilash","CMC","Global Axis","GRTP","ITPB", 
+         "L Center", "Manyata","Mangnum Blr NSTP","Pioneer","PSN","SJM","Think campus","Vydehi"];
         vm.vendorNames = [];
 		vm.vehicleNames = ["Bus","Cab"];
         vm.data = {};
@@ -26,11 +26,8 @@
 			"Cab":"Cab"
 		}]
 	},
-	"Dhara": {
-		"location": [{
-			"Sri Sai Caterers": "Main Caterer"},
-			{"Manoj Catering": "Beverage services"},
-			{"Kitchen Bells": "Fast Food Services"}
+	"CMC": {
+		"location": [
 		]
 	},
 	"Global Axis": {
@@ -40,20 +37,16 @@
 			"Cab":"Cab"
 		}]
 	},
-	"ITPL": {
+	"GRTP": {
+		"location": [{
+			"Bus":"Bus"
+		}, {
+			"Cab":"Cab"
+		}]
+	},
+	"ITPB": {
 		"location": [{
 			"Cab": "Cab"}]
-	},
-	"Jal": {
-		"location": [{
-			"Abus Hospitality Services  ": "Main Caterer"
-		}, {
-			"Chai Point": "Beverage services"
-		}, {
-			"Green Enterprises (Give Me 5)": "Fast Food services"
-		}, {
-			"Coffee Day": "Fast Food services"
-		}]
 	},
 	"L Center": {
 		"location": [{
@@ -65,6 +58,13 @@
 	"Manyata": {
 		"location": [{
 			"Cab": "Cab"}]
+	},
+	"Mangnum Blr NSTP": {
+		"location": [{
+			"Bus":"Bus"
+		}, {
+			"Cab":"Cab"
+		}]
 	},
 	"Pioneer": {
 		"location": [{
@@ -80,7 +80,7 @@
 			"Cab":"Cab"
 		}]
 	},
-	"SJM Towers": {
+	"SJM": {
 		"location": [{
 			"Cab": "Cab"}
             
@@ -107,7 +107,7 @@
         /* login function to check user credentials */
         function changeData(){
             console.log(vm.selectedLocationName);
-             console.log(Object.keys(vm.canteenData[0].Dhara.location[0]));
+             //console.log(Object.keys(vm.canteenData[0].Dhara.location[0]));
             switch(vm.selectedLocationName){
                 case "Abhilash":
                     vm.vendorNames =[];
@@ -116,10 +116,10 @@
                     }
                     console.log(vm.vendorNames.length);
                     break;
-                case "Dhara" :
+                case "CMC" :
                      vm.vendorNames =[];
-                     for(var i=0;i<vm.canteenData[0].Dhara.location.length;i++){
-                        vm.vendorNames.push(Object.keys(vm.canteenData[0].Dhara.location[i]));
+                     for(var i=0;i<vm.canteenData[0].CMC.location.length;i++){
+                        vm.vendorNames.push(Object.keys(vm.canteenData[0].CMC.location[i]));
                     }
                     console.log(vm.vendorNames.length);
                     break;
@@ -130,17 +130,17 @@
                     }
                     console.log(vm.vendorNames.length);
                     break;
-                case "ITPL":
+                case "ITPB":
                     vm.vendorNames=[];
-                    for(var i=0;i<vm.canteenData[0].ITPL.location.length;i++){
-                        vm.vendorNames.push(Object.keys(vm.canteenData[0].ITPL.location[i]));
+                    for(var i=0;i<vm.canteenData[0].ITPB.location.length;i++){
+                        vm.vendorNames.push(Object.keys(vm.canteenData[0].ITPB.location[i]));
                     }
                     console.log(vm.vendorNames.length);
                     break;
-                case "Jal":
+                case "GRTP":
                     vm.vendorNames=[];
-                    for(var i=0;i<vm.canteenData[0].Jal.location.length;i++){
-                        vm.vendorNames.push(Object.keys(vm.canteenData[0].Jal.location[i]));
+                    for(var i=0;i<vm.canteenData[0].GRTP.location.length;i++){
+                        vm.vendorNames.push(Object.keys(vm.canteenData[0].GRTP.location[i]));
                     }
                     console.log(vm.vendorNames.length);
                     break;
@@ -158,6 +158,13 @@
                     }
                     console.log(vm.vendorNames.length);
                     break;
+				case "Mangnum Blr NSTP":
+                    vm.vendorNames=[];
+                    for(var i=0;i<vm.canteenData[0]['Mangnum Blr NSTP'].location.length;i++){
+                        vm.vendorNames.push(Object.keys(vm.canteenData[0]['Mangnum Blr NSTP'].location[i]));
+                    }
+                    console.log(vm.vendorNames.length);
+                    break;
                 case "Pioneer":
                     vm.vendorNames=[];
                     for(var i=0;i<vm.canteenData[0]['Pioneer'].location.length;i++){
@@ -172,10 +179,10 @@
                     }
                     console.log(vm.vendorNames.length);
                     break;
-                case "SJM Towers":
+                case "SJM":
                     vm.vendorNames=[];
-                    for(var i=0;i<vm.canteenData[0]['SJM Towers'].location.length;i++){
-                        vm.vendorNames.push(Object.keys(vm.canteenData[0]['SJM Towers'].location[i]));
+                    for(var i=0;i<vm.canteenData[0]['SJM'].location.length;i++){
+                        vm.vendorNames.push(Object.keys(vm.canteenData[0]['SJM'].location[i]));
                     }
                     console.log(vm.vendorNames.length);
                     break;

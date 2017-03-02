@@ -15,137 +15,98 @@ cricketApp.controller('homeCtrl', function($scope, $http) {
 	$scope.showRadio = false;
 	$scope.showTable = false;
 	$scope.vendorNames = [];
-	$scope.locationNames = ["Abhilash", "Dhara", "Global Axis","ITPL", 
-        "Jal", "L Center", "Manyata","Pioneer","PSN","SJM Towers","Think campus","Vydehi"];
+	$scope.locationNames = ["Abhilash","CMC","Global Axis","GRTP","ITPB", 
+         "L Center", "Manyata","Mangnum Blr NSTP","Pioneer","PSN","SJM","Think campus","Vydehi"];
 	$scope.vehicleTypes = ["Bus","Cab"];
     //var ctx = document.getElementById("myChart");
 	
 	 $scope.canteenData = [{
 	"Abhilash": {
 		"location": [{
-			"Amba Cool Corner": "Fast Food Services"
+			"Bus":"Bus"
 		}, {
-			"Manoj Catering ": "Beverage services"
-		}, {
-			"Ideal Solutions": "Main Caterer"
-		}, {
-			"Coffee Day": "Fast Food services"
-		}, {
-			"Sai Sarvana Foods": "Fast Food services"
+			"Cab":"Cab"
 		}]
 	},
-	"Dhara": {
-		"location": [{
-			"Sri Sai Caterers": "Main Caterer"},
-			{"Manoj Catering": "Beverage services"},
-			{"Kitchen Bells": "Fast Food Services"}
+	"CMC": {
+		"location": [
 		]
 	},
 	"Global Axis": {
 		"location": [{
-			"Sri Sai Caterers": "Main Caterer"
+			"Bus":"Bus"
 		}, {
-			"Kitchen Bells  ": "Fast Food Services"
-		}, {
-			"Chai Point": "Beverage services"
-		}, {
-			"Ideal Solutions": "Main Caterer"
-		}, {
-			"SRI KANAN STORE  ": "Main Caterer"
-		}, {
-			"MDP COFFEE COUNTER": "Fast Food Services"
-		}, {
-			"Royal Star Services(Idli)  ": "Fast Food services"
-		}, {
-			"Fresh Makers  ": "Beverage services"
+			"Cab":"Cab"
 		}]
 	},
-	"ITPL": {
+	"GRTP": {
 		"location": [{
-			"S R Enterprises": "Beverage services"
+			"Bus":"Bus"
+		}, {
+			"Cab":"Cab"
 		}]
 	},
-	"Jal": {
+	"ITPB": {
 		"location": [{
-			"Abus Hospitality Services  ": "Main Caterer"
-		}, {
-			"Chai Point": "Beverage services"
-		}, {
-			"Green Enterprises (Give Me 5)": "Fast Food services"
-		}, {
-			"Coffee Day": "Fast Food services"
-		}]
+			"Cab": "Cab"}]
 	},
 	"L Center": {
 		"location": [{
-			"Sai Sarvana Foods": "Fast Food Services"
+			"Bus":"Bus"
 		}, {
-			"Ideal Solutions": "Main Caterer"
-		}, {
-			"S R Enterprises": "Beverage services"
-		}, {
-			"Coffee Day": "Fast Food services"
+			"Cab":"Cab"
 		}]
 	},
 	"Manyata": {
 		"location": [{
-			"Fresh Makers": "Beverage services"
+			"Cab": "Cab"}]
+	},
+	"Mangnum Blr NSTP": {
+		"location": [{
+			"Bus":"Bus"
+		}, {
+			"Cab":"Cab"
 		}]
 	},
 	"Pioneer": {
 		"location": [{
-			"S R Enterprises": "Beverage services"
+			"Bus":"Bus"
 		}, {
-			"Abus Hospitality Services": "Main Caterer"
-		}, {
-			"Kitchen Bells": "Fast Food services"
-		}, {
-			"Coffee Day": "Fast Food services"
+			"Cab":"Cab"
 		}]
 	},
 	"PSN": {
 		"location": [{
-			"Abus Hospitality Services  ": "Main Caterer"
+			"Bus":"Bus"
 		}, {
-			"Kitchen Bells": "Fast Food Services & Beverage services"
+			"Cab":"Cab"
 		}]
 	},
-	"SJM Towers": {
+	"SJM": {
 		"location": [{
-			"Coffee day": "Fast Food services"},
-            {
-			"Heramba Refreshments": "Main Caterer & Beverages Counter"},
-            {
-			"Fresh Makers": "Beverage services"
-		}]
+			"Cab": "Cab"}
+            
+           ]
 	},
 	"Think campus": {
 		"location": [{
-			"Kitchen Bells ": "Main Caterer"
+			"Bus":"Bus"
 		}, {
-			"Fresh Makers ": "Beverage services"
-		}, {
-			"SS Caterers": "Main Caterer"
-		}, {
-			"Coffee Day": "Fast Food services"
-		}, {
-			"Green Enterprises (Give Me 5)": "Fast Food services"
-		}, {
-			"Chai Point": "Beverage services"
+			"Cab":"Cab"
 		}]
 	},
 	"Vydehi": {
 		"location": [{
-			"Poorva Hospitalities": "Main Caterer"
+			"Bus":"Bus"
 		}, {
-			"Srivari Enterprises": "Beverage services"
+			"Cab":"Cab"
 		}]
 	}
 }];
 	
 	$scope.changeData = function() {
-		 console.log($scope.live.location);
-             console.log(Object.keys($scope.canteenData[0].Dhara.location[0]));
+		  //console.log($scope.selectedLocationName);
+             //console.log(Object.keys($scope.canteenData[0].Dhara.location[0]));
             switch($scope.live.location){
                 case "Abhilash":
                     $scope.vendorNames =[];
@@ -154,10 +115,10 @@ cricketApp.controller('homeCtrl', function($scope, $http) {
                     }
                     console.log($scope.vendorNames.length);
                     break;
-                case "Dhara" :
+                case "CMC" :
                      $scope.vendorNames =[];
-                     for(var i=0;i<$scope.canteenData[0].Dhara.location.length;i++){
-                        $scope.vendorNames.push(Object.keys($scope.canteenData[0].Dhara.location[i]));
+                     for(var i=0;i<$scope.canteenData[0].CMC.location.length;i++){
+                        $scope.vendorNames.push(Object.keys($scope.canteenData[0].CMC.location[i]));
                     }
                     console.log($scope.vendorNames.length);
                     break;
@@ -168,17 +129,17 @@ cricketApp.controller('homeCtrl', function($scope, $http) {
                     }
                     console.log($scope.vendorNames.length);
                     break;
-                case "ITPL":
+                case "ITPB":
                     $scope.vendorNames=[];
-                    for(var i=0;i<$scope.canteenData[0].ITPL.location.length;i++){
-                        $scope.vendorNames.push(Object.keys($scope.canteenData[0].ITPL.location[i]));
+                    for(var i=0;i<$scope.canteenData[0].ITPB.location.length;i++){
+                        $scope.vendorNames.push(Object.keys($scope.canteenData[0].ITPB.location[i]));
                     }
                     console.log($scope.vendorNames.length);
                     break;
-                case "Jal":
+                case "GRTP":
                     $scope.vendorNames=[];
-                    for(var i=0;i<$scope.canteenData[0].Jal.location.length;i++){
-                        $scope.vendorNames.push(Object.keys($scope.canteenData[0].Jal.location[i]));
+                    for(var i=0;i<$scope.canteenData[0].GRTP.location.length;i++){
+                        $scope.vendorNames.push(Object.keys($scope.canteenData[0].GRTP.location[i]));
                     }
                     console.log($scope.vendorNames.length);
                     break;
@@ -196,6 +157,13 @@ cricketApp.controller('homeCtrl', function($scope, $http) {
                     }
                     console.log($scope.vendorNames.length);
                     break;
+				case "Mangnum Blr NSTP":
+                    $scope.vendorNames=[];
+                    for(var i=0;i<$scope.canteenData[0]['Mangnum Blr NSTP'].location.length;i++){
+                        $scope.vendorNames.push(Object.keys($scope.canteenData[0]['Mangnum Blr NSTP'].location[i]));
+                    }
+                    console.log($scope.vendorNames.length);
+                    break;
                 case "Pioneer":
                     $scope.vendorNames=[];
                     for(var i=0;i<$scope.canteenData[0]['Pioneer'].location.length;i++){
@@ -210,10 +178,10 @@ cricketApp.controller('homeCtrl', function($scope, $http) {
                     }
                     console.log($scope.vendorNames.length);
                     break;
-                case "SJM Towers":
+                case "SJM":
                     $scope.vendorNames=[];
-                    for(var i=0;i<$scope.canteenData[0]['SJM Towers'].location.length;i++){
-                        $scope.vendorNames.push(Object.keys($scope.canteenData[0]['SJM Towers'].location[i]));
+                    for(var i=0;i<$scope.canteenData[0]['SJM'].location.length;i++){
+                        $scope.vendorNames.push(Object.keys($scope.canteenData[0]['SJM'].location[i]));
                     }
                     console.log($scope.vendorNames.length);
                     break;

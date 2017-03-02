@@ -19,7 +19,7 @@
       Location
     </div>
     
-    <select ng-model="login.selectedLocationName" ng-options="x for x in login.locationNames" required>
+    <select ng-model="login.selectedLocationName" ng-options="x for x in login.locationNames" ng-change="login.changeData()" required>
  <option value=''>- Choose Location -</option>
 </select>
     
@@ -28,7 +28,7 @@
     <div class="input-label">
       Vehicle
     </div>
-      <select ng-model="login.selectedVehicleType" ng-options="y for y in login.vehicleNames" required>
+      <select ng-model="login.selectedVehicleType" ng-options="y for y in login.vendorNames" required>
          <option value=''>- Choose Vehicle -</option>
 </select>
   </label>
